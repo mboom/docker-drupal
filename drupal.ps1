@@ -18,7 +18,7 @@ Remove-Item drupal.zip
 move C:\site\drupal-8.3.7\* $drupal
 Remove-Item -R $drupal\drupal-8.3.7
 cd $drupal
-Start-Process composer -NoNewWindow -Wait -ArgumentList "require drush/drush"
+composer require drush/drush
 cd C:\
 setx PATH /M ((Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).Path + ";$drupal\vendor\bin")
 $env:Path += ";$drupal\vendor\bin"
