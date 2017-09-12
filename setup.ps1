@@ -57,7 +57,7 @@ Invoke-WebRequest -Uri $curlcaurl -OutFile $curlca\cacert.crt
 # Download and install Composer
 md $composer
 Start-Process php -NoNewWindow -Wait -ArgumentList "-r `"copy('$composerurl', '$composer\composer-setup.php');`""
-Start-Process php -NoNewWindow -Wait -ArgumentList "-r `"if (hash_file('SHA384', '$composer\composer-setup.php') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('$composer\composer-setup.php'); } echo PHP_EOL;`""
+Start-Process php -NoNewWindow -Wait -ArgumentList "-r `"if (hash_file('SHA384', '$composer\composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('$composer\composer-setup.php'); } echo PHP_EOL;`""
 Start-Process php -NoNewWindow -Wait -ArgumentList "`"$composer\composer-setup.php`"", "--install-dir=`"$composer`""
 Start-Process php -NoNewWindow -Wait -ArgumentList "-r `"unlink('$composer\composer-setup.php');`""
 Write-Output "php `"$composer\composer.phar`" @args" > $composer\composer.ps1
