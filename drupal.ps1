@@ -7,7 +7,8 @@ $drupalpw = "drupal"
 $drupaldb = "drupal"
 
 # Define download URL
-$drupalurl = "https://ftp.drupal.org/files/projects/drupal-8.3.7.zip"
+$drupalversion = "drupal-8.3.7"
+$drupalurl = "https://ftp.drupal.org/files/projects/$drupalversion.zip"
 $drupal = "C:\site"
 
 # Download Drupal package
@@ -15,8 +16,8 @@ $drupal = "C:\site"
 Invoke-WebRequest -Uri $drupalurl -OutFile drupal.zip
 Expand-Archive -Path drupal.zip -DestinationPath $drupal
 Remove-Item drupal.zip
-move C:\site\drupal-8.3.7\* $drupal
-Remove-Item -R $drupal\drupal-8.3.7
+move C:\site\$drupalversion\* $drupal
+Remove-Item -R $drupal\$drupalversion
 cd $drupal
 composer require drush/drush
 cd C:\
