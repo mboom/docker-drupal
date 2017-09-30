@@ -16,7 +16,7 @@ $drupal = "C:\site"
 Invoke-WebRequest -Uri $drupalurl -OutFile drupal.zip
 Expand-Archive -Path drupal.zip -DestinationPath $drupal
 Remove-Item drupal.zip
-move C:\site\$drupalversion\* $drupal
+move $drupal\$drupalversion\* $drupal
 Remove-Item -R $drupal\$drupalversion
 cd $drupal
 composer require drush/drush
