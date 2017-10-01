@@ -7,7 +7,7 @@ $service = "NT AUTHORITY\NetworkService"
 
 # Define download URLs and install paths
 $urlrewriteurl = "https://download.microsoft.com/download/D/D/E/DDE57C26-C62C-4C59-A1BB-31D58B36ADA2/rewrite_amd64_en-US.msi"
-$phpurl = "http://windows.php.net/downloads/releases/php-7.1.9-nts-Win32-VC14-x64.zip"
+$phpurl = "http://windows.php.net/downloads/releases/php-7.1.10-nts-Win32-VC14-x64.zip"
 $php = "C:\Program Files\PHP"
 $ssh2url = "http://windows.php.net/downloads/pecl/releases/ssh2/1.1.2/php_ssh2-1.1.2-7.1-nts-vc14-x64.zip"
 $curlcaurl = "https://curl.haxx.se/ca/cacert.pem"
